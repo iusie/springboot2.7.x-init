@@ -1,0 +1,42 @@
+package com.github.init.model.conveter;
+
+import cn.hutool.json.JSONUtil;
+import com.github.init.model.do_.UserDO;
+import com.github.init.model.entity.User;
+
+import java.util.List;
+
+/**
+ * @author iusie
+ * @description
+ * @date 2024/12/2
+ */
+public class UserConverter {
+
+    public static UserDO convertToUserDO(User user) {
+        UserDO userDO = new UserDO();
+
+        userDO.setId(user.getId());
+        userDO.setUserAccount(user.getUserAccount());
+        userDO.setUserPassword(user.getUserPassword());
+        userDO.setUsername(user.getUsername());
+        userDO.setAvatarUrl(user.getAvatarUrl());
+        userDO.setUserProfile(user.getUserProfile());
+        userDO.setGender(user.getGender());
+        userDO.setPhone(user.getPhone());
+        userDO.setEmail(user.getEmail());
+        userDO.setUserRole(user.getUserRole());
+        userDO.setUserStatus(user.getUserStatus());
+        userDO.setCreateTime(user.getCreateTime());
+        userDO.setUpdateTime(user.getUpdateTime());
+        userDO.setIsDelete(user.getIsDelete());
+
+        // 将 tags 字段从 JSON 字符串转换为 List<String>
+        if (user.getTags() != null) {
+            List<String> tagsList = JSONUtil.toList(user.getTags(), String.class);
+            userDO.setTags(tagsList);
+        }
+
+        return userDO;
+    }
+}
