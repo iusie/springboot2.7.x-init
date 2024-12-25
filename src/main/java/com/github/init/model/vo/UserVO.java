@@ -1,4 +1,4 @@
-package com.github.init.model.do_;
+package com.github.init.model.vo;
 
 import lombok.Data;
 
@@ -9,12 +9,12 @@ import java.util.List;
 /**
  * @author iusie
  * @description
- * @date 2024/12/2
+ * @date 2024/11/24
  */
-
 @Data
-public class UserDO implements Serializable {
+public class UserVO implements Serializable {
 
+    private static final long serialVersionUID = -7665120867988620229L;
     /**
      * 用户id
      */
@@ -24,11 +24,6 @@ public class UserDO implements Serializable {
      * 用户账号
      */
     private String userAccount;
-
-    /**
-     * 密码
-     */
-    private String userPassword;
 
     /**
      * 用户昵称
@@ -79,17 +74,5 @@ public class UserDO implements Serializable {
      * 创建时间
      */
     private Date createTime;
-
-    /**
-     * 更新时间
-     */
-    private Date updateTime;
-
-    /**
-     * 是否删除
-     */
-    private Integer isDelete;
-
-    private static final long serialVersionUID = 7109811221470205966L;
 
 }

@@ -1,7 +1,7 @@
 package com.github.init.model.conveter;
 
 import cn.hutool.json.JSONUtil;
-import com.github.init.model.do_.UserDO;
+import com.github.init.model.entityDO.UserDO;
 import com.github.init.model.entity.User;
 
 import java.util.List;
